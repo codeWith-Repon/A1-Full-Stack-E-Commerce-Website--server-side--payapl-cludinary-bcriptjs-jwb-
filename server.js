@@ -7,9 +7,10 @@ const cors = require("cors");
 
 //connect to mongodb
 
+// "mongodb+srv://repon7253:OylZKphom5QiRzHp@cluster0.ejv2y.mongodb.net/"
 mongoose
   .connect(
-    "mongodb+srv://repon7253:OylZKphom5QiRzHp@cluster0.ejv2y.mongodb.net/"
+    "mongodb://localhost:27017/"
   )
   .then(() => console.log("Mongodb connected"))
   .catch((error) => console.log(error));
