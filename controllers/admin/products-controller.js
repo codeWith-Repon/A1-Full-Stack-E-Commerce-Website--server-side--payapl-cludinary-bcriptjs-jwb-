@@ -103,8 +103,7 @@ const editProduct = async (req, res) => {
     findProduct.price = price || findProduct.price;
     findProduct.salePrice = salePrice || findProduct.salePrice;
     findProduct.totalStock = totalStock || findProduct.totalStock;
-    findProduct.img = img || findProduct.img;
-
+    findProduct.image = image || findProduct.image;
     await findProduct.save();
     res.status(200).json({
       success: true,
