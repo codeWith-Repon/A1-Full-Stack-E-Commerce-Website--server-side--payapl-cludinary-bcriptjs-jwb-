@@ -53,9 +53,17 @@ const loginUser = async (req, res) => {
     })
 
     //create token
-    const token = jwt.sign({
-      id: checkUser._id, role: checkUser.role, email: checkUser.email
-    }, 'CLIENT_SECRET_KEY', {expiresIn: "60m"})
+    const token = jwt.sign(
+      {
+        id: checkUser._id,
+        role: checkUser.role,
+        email: checkUser.email,
+        userName: checkUser.userName
+      },
+      "CLIENT_SECRET_KEY",
+      { expiresIn: "60m" }
+    );
+
 
     res.cookie("token",token, {httpOnly: true, secure: false}).json({
       success: true,
@@ -63,7 +71,8 @@ const loginUser = async (req, res) => {
       user: {
         email: checkUser.email,
         role: checkUser.role,
-        id: checkUser._id
+        id: checkUser._id,
+        userName: checkUser.userName
       }
     })
 
