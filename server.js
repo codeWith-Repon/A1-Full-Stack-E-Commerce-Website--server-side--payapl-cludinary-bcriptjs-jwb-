@@ -4,6 +4,7 @@ const cookieParser = require("cookie-parser");
 const cors = require("cors");
 const authRouter = require("./routes/auth/auth-route")
 const adminProductsRouter = require("./routes/admin/products-router")
+const shopProductsRouter = require("./routes/shop/products-routes")
 
 
 //connect to mongodb
@@ -39,6 +40,7 @@ app.use(cookieParser());
 app.use(express.json());
 app.use("/api/auth", authRouter);
 app.use("/api/admin/products", adminProductsRouter)
+app.use("/api/shop/products",shopProductsRouter)
 
 app.listen(PORT, () =>
   console.log(`server is now running on http://localhost:${PORT}`)
