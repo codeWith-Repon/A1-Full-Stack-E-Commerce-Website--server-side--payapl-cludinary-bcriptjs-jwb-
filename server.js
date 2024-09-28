@@ -5,6 +5,7 @@ const cors = require("cors");
 const authRouter = require("./routes/auth/auth-route")
 const adminProductsRouter = require("./routes/admin/products-router")
 const shopProductsRouter = require("./routes/shop/products-routes")
+const shopCartRouter = require("./routes/shop/cart-routes")
 
 
 //connect to mongodb
@@ -41,6 +42,7 @@ app.use(express.json());
 app.use("/api/auth", authRouter);
 app.use("/api/admin/products", adminProductsRouter)
 app.use("/api/shop/products",shopProductsRouter)
+app.use("/api/shop/cart",shopCartRouter)
 
 app.listen(PORT, () =>
   console.log(`server is now running on http://localhost:${PORT}`)
