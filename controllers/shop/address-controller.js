@@ -60,6 +60,7 @@ const fetchAllAddress = async (req, res) => {
   }
 };
 const editAddress = async (req, res) => {
+  try {
   const { userId, addressId } = req.params; //address id autometically created by mongodb
   const formData = req.body;
 
@@ -88,7 +89,7 @@ const editAddress = async (req, res) => {
     data: address,
   });
 
-  try {
+  
   } catch (error) {
     console.log(error);
     res.status(500).json({
