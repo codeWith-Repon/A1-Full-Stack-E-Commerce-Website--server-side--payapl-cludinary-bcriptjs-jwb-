@@ -146,7 +146,7 @@ const getAllOrdersByUser = async(req,res)=> {
     }
 
     res.status(200).json({
-      success: false, 
+      success: true, 
       data: orders
     })
     
@@ -173,7 +173,7 @@ const getOrderDetails = async(req,res)=> {
     }
 
     res.status(200).json({
-      success: false, 
+      success: true, 
       data: orders
     })
     
