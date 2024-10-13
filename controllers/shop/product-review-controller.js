@@ -16,7 +16,7 @@ const addProductReviews = async (req, res) => {
     if (!order) {
       return res.status(403).json({
         success: false,
-        message: "You need to purcase product to review it.",
+        message: "You need to purchase product to review it.",
       });
     }
 
@@ -32,13 +32,13 @@ const addProductReviews = async (req, res) => {
       });
     }
 
-    const newReview = new {
+    const newReview = new ProductReview({
       productId,
       userId,
       userName,
       reviewMessage,
       reviewValue,
-    }();
+    });
 
     await newReview.save();
 
@@ -57,6 +57,7 @@ const addProductReviews = async (req, res) => {
     })
 
   } catch (error) {
+    console.log(error)
     res.status(500).json({
       success: false,
       message: "Error",
@@ -76,6 +77,7 @@ const getProductReviews = async (req, res) => {
     })
 
   } catch (error) {
+    console.log(error)
     res.status(500).json({
       success: false,
       message: "Error",

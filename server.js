@@ -10,7 +10,7 @@ const shopCartRouter = require("./routes/shop/cart-routes")
 const shopAddressRouter = require("./routes/shop/address-routes")
 const shopOrderRouter = require("./routes/shop/order-routes")
 const shopSearchRouter = require("./routes/shop/search-routes")
-const shopReviewRouter = require("./routes/shop/product-review-controller")
+const shopReviewRouter = require("./routes/shop/review-router")
 
 
 //connect to mongodb
