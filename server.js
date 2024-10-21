@@ -20,7 +20,7 @@ const commonFeatureRouter = require("./routes/common/feature-routes")
 // "mongodb+srv://repon7253:OylZKphom5QiRzHp@cluster0.ejv2y.mongodb.net/"
 mongoose
   .connect(
-    "mongodb://localhost:27017/"
+    "mongodb+srv://repon:repon123@cluster0.0b6cd.mongodb.net/"
   )
   .then(() => console.log("Mongodb connected"))
   .catch((error) => console.log(error));
@@ -30,7 +30,7 @@ const PORT = process.env.PORT || 5000;
 
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: "http://localhost:5174",
     methods: ["GET", "POST", "DELETE", "PUT"],
     allowedHeaders: [
       "Content-Type",
